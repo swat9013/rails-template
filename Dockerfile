@@ -13,5 +13,4 @@ Add Gemfile /app/Gemfile
 Add Gemfile.lock /app/Gemfile.lock
 RUN bundle install -j4
 
-WORKDIR /app
 ADD . /app

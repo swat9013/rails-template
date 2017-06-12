@@ -48,6 +48,9 @@ application do
   }
 end
 
+# run
+run 'touch Gemfile.lock'
+
 after_bundle do
   # git
   git :init
