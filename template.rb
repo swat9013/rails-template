@@ -12,6 +12,7 @@ nginx/Dockerfile
 nginx/conf.d/default.conf
 nginx/conf.d/app.conf
 nginx/nginx.conf
+config/database.yml
 )
 
 get_file_list.each do |path|
