@@ -46,12 +46,10 @@ application do
   }
 end
 
-
-run "bundle install"
-
-run 'rubocop -a'
-
-# git
-git :init
-git add: "."
-git commit: %Q{ -m 'Initial commit' }
+after_bundle do
+  run 'rubocop -a'
+  # git
+  git :init
+  git add: "."
+  git commit: %Q{ -m 'Initial commit' }
+end
