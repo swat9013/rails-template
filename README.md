@@ -1,5 +1,9 @@
 Rails template
 ==============
+## Requirement
+Rails 5.1
+Docker
+Docker-compose
 
 ## Usage
 ```
