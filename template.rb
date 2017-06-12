@@ -47,7 +47,6 @@ application do
 end
 
 after_bundle do
-  run 'rubocop -a'
   # git
   git :init
   git add: "."

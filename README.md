@@ -3,7 +3,7 @@ Rails template
 
 ## Usage
 ```
-rails new appname -m https://raw.githubusercontent.com/swat9013/rails-template/master/template.rb
+rails new appname -BT -m https://raw.githubusercontent.com/swat9013/rails-template/master/template.rb
 ```
 
 ## Reference
