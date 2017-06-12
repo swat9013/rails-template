@@ -16,12 +16,13 @@ config/database.yml
 )
 
 get_file_list.each do |path|
+  remove_file path
   get "#{repo_url}#{path}", "#{path}"
   gsub_file path, /%app_name%/, @app_name
 end
 
 # Gemfile
-gem 'redis'
+uncomment_lines 'Gemfile', "gem 'redis'"
 
 gem_group :development, :test do
   gem 'better_errors'
