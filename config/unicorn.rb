@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-rails_root = File.expand_path("../../../", __FILE__)
+rails_root = File.expand_path("../../", __FILE__)
 
 worker_processes 3
 listen "#{rails_root}/tmp/sockets/unicorn.sock"

@@ -1,7 +1,7 @@
 # constant
 repo_url = "https://raw.githubusercontent.com/swat9013/rails-template/master/"
 
-@app_name = app_name
+@app_name = ask("What is the application name?")
 
 get_file_list = %w(
 .rubocop.yml
@@ -19,11 +19,13 @@ config/unicorn.rb
 get_file_list.each do |path|
   remove_file path
   get "#{repo_url}#{path}", "#{path}"
-  gsub_file path, /%app_name%/, @app_name
+  gsub_file path, %r{app_name}, @app_name
 end
 
 # Gemfile
 uncomment_lines 'Gemfile', "gem 'redis'"
+uncomment_lines 'Gemfile', "gem 'therubyracer'"
+
 gem 'unicorn'
 
 gem_group :development, :test do
@@ -49,9 +51,6 @@ application do
     config.time_zone = 'Asia/Tokyo'
   }
 end
-
-# run
-run 'touch Gemfile.lock'
 
 after_bundle do
   # git
