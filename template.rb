@@ -13,6 +13,7 @@ nginx/conf.d/default.conf
 nginx/conf.d/app.conf
 nginx/nginx.conf
 config/database.yml
+config/unicorn.rb
 )
 
 get_file_list.each do |path|
@@ -23,6 +24,7 @@ end
 
 # Gemfile
 uncomment_lines 'Gemfile', "gem 'redis'"
+gem 'unicorn'
 
 gem_group :development, :test do
   gem 'better_errors'
